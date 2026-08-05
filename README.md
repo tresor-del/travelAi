@@ -1,6 +1,6 @@
-# TravalAI
+# TravelAI
 
-TravalAI est un assistant de planification de voyage basé sur l'IA. Il utilise FastAPI pour l'interface web, LangGraph pour orchestrer des agents de voyage, Groq pour le modèle LLM, Tavily pour la recherche d'hôtels et AviationStack pour trouver des vols.
+TravelAI est un assistant de planification de voyage basé sur l'IA. Il utilise FastAPI pour l'interface web, LangGraph pour orchestrer des agents de voyage, Groq pour le modèle LLM, Tavily pour la recherche d'hôtels et AviationStack pour trouver des vols.
 
 ## Fonctionnalités
 
