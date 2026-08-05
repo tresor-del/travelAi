@@ -120,13 +120,3 @@ pytest
 - `flight_tool.py` résout les textes de localisation en codes IATA et interroge AviationStack
 - `tavily_tool.py` effectue une recherche de résultats sur Tavily et retourne un résumé formaté
 
-## Contributions
-
-1. Forker le dépôt
-2. Créer une branche dédiée
-3. Ajouter des fonctionnalités ou corriger les bugs
-4. Soumettre une pull request
-
-## Licence
-
-À définir selon votre choix.
