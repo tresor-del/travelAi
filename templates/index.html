@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Travel AI</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <div class="page-bg">
+        <div class="gradient-circle circle-1"></div>
+        <div class="gradient-circle circle-2"></div>
+        <div class="gradient-circle circle-3"></div>
+    </div>
+
+    <main class="app-container">
+
+        <section class="hero-section">
+            <!-- <div class="badge">
+                ✈️ Travel AI — A Multi-Agent Travel Planner with LangGraph
+            </div> -->
+
+            <h1>
+                Plannifiez vos voyage avec l'IA
+            </h1>
+
+            <p>
+                Recherchez des vols, découvrez des hôtels et générez un itinéraire de voyage complet à l'aide d'un
+                système multi-agent LangGraph.
+            </p>
+        </section>
+
+        <section class="planner-card">
+
+            <div class="card-header">
+                <div>
+                    <h2>Où voulez-vous aller?</h2>
+                    <p>
+                        Exemple : Planifiez un voyage complet de 7 jours depuis Lomé vers paris.
+                    </p>
+                </div>
+
+                <!-- <div class="status-pill">
+                    <span class="status-dot"></span>
+                    Online
+                </div> -->
+            </div>
+
+            <div class="input-area">
+                <div class="trip-fields">
+                    <div class="field-group">
+                        <label for="departureInput">Départ (optionnel)</label>
+                        <input type="text" id="departureInput" placeholder="Ex : Lomé" />
+                    </div>
+
+                    <div class="field-group">
+                        <label for="arrivalInput">Arrivée (optionnel)</label>
+                        <input type="text" id="arrivalInput" placeholder="Ex : Paris" />
+                    </div>
+
+                    <div class="field-group">
+                        <label for="daysInput">Nombre de jours (optionnel)</label>
+                        <input type="number" id="daysInput" min="1" max="60" placeholder="Ex : 7" />
+                    </div>
+                </div>
+
+                <div class="input-area">
+
+                </div>
+
+                <button id="sendBtn" onclick="sendMessage()">
+                    <span id="btnText">Générer le plan</span>
+                    <span id="btnLoader" class="loader hidden"></span>
+                </button>
+            </div>
+
+            <div class="quick-prompts">
+                <button onclick="setTrip('Lomé', 'Cotonou', 7)">Voyage au Bénin</button>
+                <button onclick="setTrip('Lomé', 'Paris', 7)">Voyage en France</button>
+                <button onclick="setTrip('Lomé', 'Accra', 7)">Voyage à Accra</button>
+                <button onclick="setTrip('', '', null, 'Donne moi les informations de vol de tous les pays')">Voyage
+                    Global</button>
+            </div>
+
+        </section>
+
+        <section id="resultSection" class="result-section hidden">
+
+            <div class="result-header">
+                <div>
+                    <h2>Votre IA de voyage</h2>
+                    <p id="threadInfo">Thread ID: -</p>
+                </div>
+
+                <div class="result-actions">
+                    <button class="copy-btn" onclick="copyResult()">
+                        Copier
+                    </button>
+
+                    <button class="download-btn" onclick="downloadPDF()">
+                        Télécharger PDF
+                    </button>
+                </div>
+            </div>
+
+            <div id="pdfContent" class="pdf-content">
+                <h1 class="pdf-title">AI Travel Plan</h1>
+                <div id="resultBox" class="result-box"></div>
+            </div>
+
+        </section>
+
+        <section id="errorBox" class="error-box hidden"></section>
+
+    </main>
+
+    <footer>
+        Construit avec FastAPI, LangGraph, Groq, PostgreSQL, Tavily et AviationStack
+    </footer>
+
+    <!-- Markdown Renderer -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <!-- PDF Download Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <!-- Your Custom JS -->
+    <script src="/static/script.js"></script>
+
+</body>
+
+</html>
